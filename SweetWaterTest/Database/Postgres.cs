@@ -13,7 +13,7 @@ namespace SweetWaterTest.Database
         private static string _ConnectionString;
 
         // Lazy Loading
-        private static string ConnectionString
+        internal static string ConnectionString
         {
             get
             {
