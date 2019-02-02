@@ -26,7 +26,7 @@ namespace SweetWaterTest.Domain
         public int OrderId { get; private set; }
         public string Comments { get; private set; }
         [DisplayName("Expect Ship")]
-        public Nullable<DateTime> ExpectedShipDate { get; private set; }
+        public Nullable<DateTime> ExpectedShipDate { get; internal set; }
 
         /*
         ## Task 1 - Write a report that will display the comments from the table
@@ -62,5 +62,7 @@ namespace SweetWaterTest.Domain
         }
 
         public string CommentCategory { get; private set; }
+
+        internal bool UpdateRequired { get; set; }
     }
 }

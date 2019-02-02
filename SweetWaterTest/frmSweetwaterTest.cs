@@ -15,6 +15,7 @@ namespace SweetWaterTest
     public partial class frmSweetH20 : Form
     {
         private List<CommentCategory> _Categories;
+        private List<OrderData> _Orders;
 
         public frmSweetH20()
         {
@@ -23,11 +24,24 @@ namespace SweetWaterTest
 
         private void btnTask1_Click(object sender, EventArgs e)
         {
-            List<OrderData> orders = OrderDataMethods.GetAll();
-            _Categories = OrderDataMethods.GetCommentCategory(orders);
+            btnTask1.Enabled = false;
+
+            _Orders = OrderDataMethods.GetAll();
+            _Categories = OrderDataMethods.GetCommentCategory(_Orders);
 
             bindingSourceOrders.DataSource = _Categories;
-            dataGridViewCategories.Refresh();
+
+            btnTask2.Enabled = true;
+        }
+
+        private void btnTask2_Click(object sender, EventArgs e)
+        {
+            OrderDataMethods.ParseExpectedShipDate(_Orders);
+
+            bindingSourceOrders.DataSource = typeof(CommentCategory);
+            bindingSourceOrders.DataSource = _Categories;
+
+            MessageBox.Show("Expected Delivery Dates Updated");
         }
     }
 }

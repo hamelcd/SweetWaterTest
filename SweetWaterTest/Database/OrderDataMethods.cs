@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 using SweetWaterTest.Domain;
+using System.Text.RegularExpressions;
 
 namespace SweetWaterTest.Database
 {
@@ -52,6 +53,26 @@ namespace SweetWaterTest.Database
             }
 
             return categories;
+        }
+
+        private static Regex _ExtractDate = new Regex(@"Expected Ship Date:? ?(\d\d/\d\d/\d\d)");
+
+        public static void ParseExpectedShipDate(List<OrderData> Orders)
+        {
+            foreach (OrderData order in Orders)
+            {
+                Match m = _ExtractDate.Match(order.Comments);
+                if (m.Success)
+                {
+                    DateTime expShip;
+
+                    if (DateTime.TryParse(m.Groups[1].Value, out expShip))
+                    {
+                        if (order.ExpectedShipDate == null || order.ExpectedShipDate != expShip)
+                            order.ExpectedShipDate = expShip;
+                    }
+                }
+            }
         }
     }
 }
