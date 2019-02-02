@@ -26,6 +26,8 @@ namespace SweetWaterTest.Database
                             results.Add(new OrderData(reader));
                     }
                 }
+
+                conn.Close();
             }
 
             return results;
@@ -40,7 +42,8 @@ namespace SweetWaterTest.Database
                 CommentCategory cat = categories.Find(x => x.Category == order.CommentCategory);
                 if (cat == null)
                 {
-                    cat = new CommentCategory() { Category = order.CommentCategory, Orders = new List<OrderData>() { order });
+                    cat = new CommentCategory() { Category = order.CommentCategory, Orders = new List<OrderData>() { order } };
+                    categories.Add(cat);
                 }
                 else
                 {

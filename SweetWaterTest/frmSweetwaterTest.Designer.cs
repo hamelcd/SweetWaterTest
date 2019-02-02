@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSourceOrders = new System.Windows.Forms.BindingSource();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.dataGridViewCategories = new System.Windows.Forms.DataGridView();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource();
+            this.bindingSourceOrders = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewDetail = new System.Windows.Forms.DataGridView();
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expectedShipDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnTask1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceOrders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,30 +61,16 @@
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnTask1);
+            // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(913, 499);
             this.splitContainer1.SplitterDistance = 303;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.categoryDataGridViewTextBoxColumn,
-            this.orderCountDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bindingSourceOrders;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(606, 180);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // bindingSourceOrders
-            // 
-            this.bindingSourceOrders.DataSource = typeof(SweetWaterTest.Domain.CommentCategory);
             // 
             // splitContainer2
             // 
@@ -92,14 +81,28 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer2.Panel1.Controls.Add(this.dataGridViewCategories);
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridViewDetail);
             this.splitContainer2.Size = new System.Drawing.Size(606, 499);
             this.splitContainer2.SplitterDistance = 180;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // dataGridViewCategories
+            // 
+            this.dataGridViewCategories.AutoGenerateColumns = false;
+            this.dataGridViewCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.categoryDataGridViewTextBoxColumn,
+            this.orderCountDataGridViewTextBoxColumn});
+            this.dataGridViewCategories.DataSource = this.bindingSourceOrders;
+            this.dataGridViewCategories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewCategories.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewCategories.Name = "dataGridViewCategories";
+            this.dataGridViewCategories.Size = new System.Drawing.Size(606, 180);
+            this.dataGridViewCategories.TabIndex = 0;
             // 
             // categoryDataGridViewTextBoxColumn
             // 
@@ -115,25 +118,24 @@
             this.orderCountDataGridViewTextBoxColumn.Name = "orderCountDataGridViewTextBoxColumn";
             this.orderCountDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridView2
+            // bindingSourceOrders
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bindingSourceOrders.DataSource = typeof(SweetWaterTest.Domain.CommentCategory);
+            // 
+            // dataGridViewDetail
+            // 
+            this.dataGridViewDetail.AutoGenerateColumns = false;
+            this.dataGridViewDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderIdDataGridViewTextBoxColumn,
             this.commentsDataGridViewTextBoxColumn,
             this.expectedShipDateDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.ordersBindingSource;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(606, 315);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.bindingSourceOrders;
+            this.dataGridViewDetail.DataSource = this.ordersBindingSource;
+            this.dataGridViewDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDetail.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewDetail.Name = "dataGridViewDetail";
+            this.dataGridViewDetail.Size = new System.Drawing.Size(606, 315);
+            this.dataGridViewDetail.TabIndex = 0;
             // 
             // orderIdDataGridViewTextBoxColumn
             // 
@@ -157,6 +159,21 @@
             this.expectedShipDateDataGridViewTextBoxColumn.Name = "expectedShipDateDataGridViewTextBoxColumn";
             this.expectedShipDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.bindingSourceOrders;
+            // 
+            // btnTask1
+            // 
+            this.btnTask1.Location = new System.Drawing.Point(36, 36);
+            this.btnTask1.Name = "btnTask1";
+            this.btnTask1.Size = new System.Drawing.Size(75, 23);
+            this.btnTask1.TabIndex = 0;
+            this.btnTask1.Text = "Task 1";
+            this.btnTask1.UseVisualStyleBackColor = true;
+            this.btnTask1.Click += new System.EventHandler(this.btnTask1_Click);
+            // 
             // frmSweetH20
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,16 +182,17 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmSweetH20";
             this.Text = "Sweetwater Test";
+            this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceOrders)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -183,16 +201,17 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCategories;
         private System.Windows.Forms.BindingSource bindingSourceOrders;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderCountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expectedShipDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource ordersBindingSource;
+        private System.Windows.Forms.Button btnTask1;
     }
 }
 

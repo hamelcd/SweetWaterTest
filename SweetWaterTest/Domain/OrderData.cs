@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,10 @@ namespace SweetWaterTest.Domain
         }
 
 
+        [DisplayName("Order Id")]
         public int OrderId { get; private set; }
         public string Comments { get; private set; }
+        [DisplayName("Expect Ship")]
         public Nullable<DateTime> ExpectedShipDate { get; private set; }
 
         /*
