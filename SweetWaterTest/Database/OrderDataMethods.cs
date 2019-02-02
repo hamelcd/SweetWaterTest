@@ -55,7 +55,7 @@ namespace SweetWaterTest.Database
             return categories;
         }
 
-        private static Regex _ExtractDate = new Regex(@"Expected Ship Date:? ?(\d\d/\d\d/\d\d)");
+        private static Regex _ExtractDate = new Regex(@"Expected Ship Date:? ?(\d\d/\d\d/\d+)");
 
         public static void ParseExpectedShipDate(List<OrderData> Orders)
         {
