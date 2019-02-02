@@ -1,0 +1,24 @@
+_xr_temp
+bin
+obj
+*.suo
+*.db
+*.vdproj
+publish
+debug
+release
+_UpgradeReport_Files
+UpgradeLog.XML
+*.bak
+build.log
+*.Cache
+*.exclude
+*~ "Copy of "
+TestResults
+Assemblies/*.dll
+Assemblies/*.pdb
+Assemblies/*.xml
+Assemblies/*.obj
+*csproj.user
+*.vs10x
+*.ide-wal
