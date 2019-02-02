@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SweetWaterTest
 {
-    public partial class Form1 : Form
+    public partial class frmSweetH20 : Form
     {
-        public Form1()
+        public frmSweetH20()
         {
             InitializeComponent();
         }
